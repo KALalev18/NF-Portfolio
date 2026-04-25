@@ -642,29 +642,29 @@ const PortfolioSection = () => (
           </div>
         </div>
 
-        {/* Project 2: Tuthon Landing Page */}
+        {/* Project 2: Silen Gym Landing Page */}
         <div className="grid md:grid-cols-2 gap-12 items-stretch border-b border-slate-800 pb-16">
           <div className="order-2 md:order-1 flex flex-col justify-center">
-            <h3 className="text-3xl font-black mb-2 text-blue-400">Tuthon Landing Page</h3>
-            <p className="text-slate-300 mb-6 italic">България • Ландинг страница за апартамент, портфолио, ресторант и др.</p>
+            <h3 className="text-3xl font-black mb-2 text-blue-400">Silen Gym Landing Page</h3>
+            <p className="text-slate-300 mb-6 italic">Концепция • Ландинг страница за фитнес зала</p>
             <p className="text-slate-400 mb-8 leading-relaxed flex-grow">
-              Tuthon е универсална ландинг страница, която може да се използва за представяне на апартамент под наем, лично портфолио, ресторант, малък бизнес или всякакъв друг проект. Модерен дизайн, адаптивност и възможност за персонализация според нуждите на клиента.<br/><br/>
-              <span className="font-bold text-blue-500">Резултат:</span> Впечатляващо първо впечатление, повече запитвания и лесна промяна на съдържанието според целта.
+              Silen Gym е пример за модерен уебсайт на фитнес зала, който предоставя всичко, което клиентите очакват: ясна информация, вдъхновяващ дизайн, секции за услуги, галерия, контакти и лесна навигация. Страницата е адаптивна и подходяща за всякакви устройства.<br/><br/>
+              <span className="font-bold text-blue-500">Резултат:</span> Повече записвания, по-добра ангажираност и професионално онлайн присъствие.
             </p>
             <ul className="space-y-3 font-mono text-sm text-slate-300">
-              <li><span className="text-blue-500">✓</span> Модерен ландинг дизайн</li>
-              <li><span className="text-blue-500">✓</span> Гъвкава употреба (апартамент, портфолио, ресторант)</li>
-              <li><span className="text-blue-500">✓</span> Лесна персонализация</li>
+              <li><span className="text-blue-500">✓</span> Модерен фитнес дизайн</li>
+              <li><span className="text-blue-500">✓</span> Секции за услуги, галерия и контакти</li>
+              <li><span className="text-blue-500">✓</span> Адаптивност и лесна навигация</li>
             </ul>
           </div>
           <a
-            href="http://bg-holiday.fi/"
+            href="https://silengym.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-slate-800 rounded-3xl aspect-[4/3] md:aspect-auto flex items-center justify-center border border-slate-700 relative overflow-hidden order-1 md:order-2 group h-full min-h-[300px] transition-transform hover:scale-105 focus:scale-105 outline-none"
-            title="Виж сайта Tuthon"
+            title="Виж сайта Silen Gym"
           >
-            <img src="/tuthon.png" alt="Tuthon Landing Page" className="object-contain w-full h-full rounded-3xl bg-white" />
+            <img src="/silen-gym.png" alt="Silen Gym Landing Page" className="object-contain w-full h-full rounded-3xl bg-white" />
           </a>
         </div>
       </div>
