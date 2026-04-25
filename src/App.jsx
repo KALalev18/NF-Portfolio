@@ -619,7 +619,7 @@ const PortfolioSection = () => (
             className="bg-slate-800 rounded-3xl aspect-[4/3] md:aspect-auto flex items-center justify-center border border-slate-700 relative overflow-hidden group h-full min-h-[300px] transition-transform hover:scale-105 focus:scale-105 outline-none"
             title="Виж сайта CERNO"
           >
-            <img src="/src/assets/CERNO.png" alt="CERNO Multi-page Website" className="object-contain w-full h-full rounded-3xl bg-white" />
+            <img src="/CERNO.png" alt="CERNO Multi-page Website" className="object-contain w-full h-full rounded-3xl bg-white" />
             <div className="absolute bottom-6 left-6 right-6">
               <div className="bg-slate-900/80 backdrop-blur p-4 rounded-xl text-xs font-mono text-green-400">
                 &gt; Lighthouse: 100 / 100 / 100 / 100<br/>
@@ -664,7 +664,7 @@ const PortfolioSection = () => (
             className="bg-slate-800 rounded-3xl aspect-[4/3] md:aspect-auto flex items-center justify-center border border-slate-700 relative overflow-hidden order-1 md:order-2 group h-full min-h-[300px] transition-transform hover:scale-105 focus:scale-105 outline-none"
             title="Виж сайта Tuthon"
           >
-            <img src="/src/assets/tuthon.png" alt="Tuthon Landing Page" className="object-contain w-full h-full rounded-3xl bg-white" />
+            <img src="/tuthon.png" alt="Tuthon Landing Page" className="object-contain w-full h-full rounded-3xl bg-white" />
           </a>
         </div>
       </div>
