@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; 
 
 // --- Валутен калкулатор (Точен курс: 1 EUR = 1.95583 BGN) ---
 const formatPrice = (bgnPrice) => {
