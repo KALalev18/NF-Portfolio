@@ -271,6 +271,35 @@ const HomeSection = ({ setActiveTab }) => {
           </div>
         </div>
       </section>
+      {/* ДОВЕРЕНИ КЛИЕНТИ (Trusted Clients) Section */}
+<section className="py-24 bg-slate-900 text-white animate-in fade-in duration-500">
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-5xl font-black tracking-tighter mb-20 text-center">ДОВЕРЕНИ КЛИЕНТИ</h2>
+    <div className="grid md:grid-cols-2 gap-16">
+      {/* CERNO Client Card */}
+      <div className="relative group flex items-center justify-center">
+        <a href="https://cernocaseclub.com" target="_blank" rel="noopener noreferrer">
+          <img src="/CERNO.png" alt="CERNO Case Club" className="rounded-3xl shadow-lg w-full max-w-md object-contain transition-transform duration-300 group-hover:scale-105" />
+        </a>
+        <div className="absolute right-0 top-0 h-full w-0 group-hover:w-2/3 bg-slate-800/95 rounded-3xl p-8 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+          <h3 className="text-2xl font-bold mb-2 text-blue-400">CERNO Case Club</h3>
+          <p className="text-slate-300 mb-4">Лахти, Финландия</p>
+          <p className="text-slate-400 mb-4">CERNO е уникален и един от първите case club-ове във Финландия. Създадох за тях самостоятелен уебсайт, за да привлекат нови членове. Клубът е студентска инициатива, фокусирана върху реални бизнес казуси и изграждане на практически умения и контакти.</p>
+        </div>
+      </div>
+      {/* Local Clients Card */}
+      <div className="relative group flex items-center justify-center">
+        <img src="/local-clients.png" alt="Local Clients" className="rounded-3xl shadow-lg w-full max-w-md object-contain transition-transform duration-300 group-hover:scale-105" />
+        <div className="absolute right-0 top-0 h-full w-0 group-hover:w-2/3 bg-slate-800/95 rounded-3xl p-8 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+          <h3 className="text-2xl font-bold mb-2 text-green-400">Локални клиенти</h3>
+          <p className="text-slate-300 mb-4">Реални резултати и удовлетворение</p>
+          <p className="text-slate-400 mb-4">Моите услуги помогнаха на местни бизнеси да постигнат растеж и по-добро онлайн присъствие. Клиентите са доволни от резултатите и препоръчват работата ми.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 };
@@ -574,6 +603,9 @@ const CalculatorSection = ({ setActiveTab, setProjectChoice, setContactMessage }
               Годишни разходи след това:<br/> ~{formatPrice(80).eur} € / {formatPrice(80).bgn} лв. (Домейн + Хост)<br/>
               <span className="text-blue-300">Първа обработка на съдържание безплатно, всяка следваща: {formatPrice(150).eur} € / 150 лв.</span>
             </div>
+            <div className="mt-4 text-xs text-orange-500 font-bold bg-orange-100/60 inline-block px-3 py-2 rounded-lg leading-snug">
+              За да стартираме проекта, се изисква капаро: <span className="text-orange-600">20% от сумата</span> предварително.
+            </div>
           </div>
 
           <button onClick={handleGetOffer} className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-blue-700 transition mt-auto shadow-lg shadow-blue-900/50">
@@ -857,16 +889,24 @@ const Footer = () => (
         </div>
         <span className="font-black text-slate-900 tracking-tighter">NORDIC FLOW</span>
       </div>
-      
+
       <div className="text-center md:text-left">
         <div className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">
           © 2026 Nordic Flow Engineering.
         </div>
-        <div className="text-slate-500 text-xs">
+        <div className="text-slate-500 text-xs mb-2">
           Създадено без никакъв WordPress. Създадено с чист код и инженерна прецизност.
         </div>
+        <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center md:justify-start items-center mt-2">
+          <a href="#" className="text-blue-600 hover:underline text-xs font-bold uppercase">Общи условия</a>
+          <span className="hidden md:inline-block text-slate-300">|</span>
+          <a href="#" className="text-blue-600 hover:underline text-xs font-bold uppercase">Политика за поверителност</a>
+        </div>
+        <div className="text-[10px] text-slate-400 mt-2 max-w-md">
+          Nordic Flow спазва всички изисквания на GDPR. Вашите лични данни се обработват единствено за целите на комуникация и не се предоставят на трети страни. За повече информация вижте <a href="#" className="text-blue-600 underline">Политика за поверителност</a>.
+        </div>
       </div>
-      
+
       <div className="flex gap-4 text-slate-400">
         <span className="text-xs font-bold uppercase">Бургаски регион</span>
         <span className="text-xs font-bold uppercase border-l border-slate-300 pl-4">Работим дистанционно</span>
@@ -879,6 +919,32 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [projectChoice, setProjectChoice] = useState('');
   const [contactMessage, setContactMessage] = useState('');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState('');
+  const [modalTitle, setModalTitle] = useState('');
+
+  // Texts for the modals
+  const termsText = `
+    <h2 class='text-2xl font-bold mb-4'>Общи условия</h2>
+    <p class='mb-2'>Този уебсайт е собственост на Nordic Flow Engineering. Използването на сайта означава съгласие с настоящите условия. Всички материали са защитени с авторско право. Не се разрешава копиране или разпространение без изрично писмено съгласие.</p>
+    <ul class='list-disc pl-6 mb-2'>
+      <li>Услугите се предоставят "както са" без гаранции.</li>
+      <li>Nordic Flow не носи отговорност за преки или косвени щети, произтичащи от използването на сайта.</li>
+      <li>Потребителите са длъжни да предоставят вярна информация при контакт.</li>
+    </ul>
+    <p>За въпроси: nordicflow.dev@gmail.com</p>
+  `;
+  const privacyText = `
+    <h2 class='text-2xl font-bold mb-4'>Политика за поверителност</h2>
+    <p class='mb-2'>Nordic Flow спазва всички изисквания на GDPR. Вашите лични данни се обработват единствено за целите на комуникация и не се предоставят на трети страни.</p>
+    <ul class='list-disc pl-6 mb-2'>
+      <li>Събираме само данни, които Вие доброволно предоставяте чрез контакт формата.</li>
+      <li>Данните се използват само за връзка с Вас относно заявените услуги.</li>
+      <li>Не споделяме, продаваме или предоставяме данни на трети страни.</li>
+      <li>Можете да поискате изтриване на Вашите данни по всяко време.</li>
+    </ul>
+    <p>За въпроси относно поверителността: nordicflow.dev@gmail.com</p>
+  `;
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -888,10 +954,56 @@ export default function App() {
     }
   }, [activeTab, contactMessage, projectChoice]);
 
+  // Modal component
+  const Modal = ({ open, onClose, title, content }) => {
+    if (!open) return null;
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+        <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-8 relative animate-in fade-in duration-300">
+          <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-blue-600 text-2xl font-bold">×</button>
+          <div className="text-slate-900 prose max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
+        </div>
+      </div>
+    );
+  };
+
+  // Footer override to inject modal triggers
+  const FooterWithModal = () => (
+    <footer className="py-12 border-t border-slate-100 bg-white">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 bg-slate-900 rounded-full flex items-center justify-center text-white text-[10px]">
+            <Icon name="bolt" className="w-4 h-4" />
+          </div>
+          <span className="font-black text-slate-900 tracking-tighter">NORDIC FLOW</span>
+        </div>
+
+        <div className="text-center md:text-left">
+          <div className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">
+            © 2026 Nordic Flow Engineering.
+          </div>
+          <div className="text-slate-500 text-xs mb-2">
+            Създадено без никакъв WordPress. Създадено с чист код и инженерна прецизност.
+          </div>
+          <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center md:justify-start items-center mt-2">
+            <button onClick={() => { setModalTitle('Общи условия'); setModalContent(termsText); setModalOpen(true); }} className="text-blue-600 hover:underline text-xs font-bold uppercase bg-transparent border-none cursor-pointer">Общи условия</button>
+            <span className="hidden md:inline-block text-slate-300">|</span>
+            <button onClick={() => { setModalTitle('Политика за поверителност'); setModalContent(privacyText); setModalOpen(true); }} className="text-blue-600 hover:underline text-xs font-bold uppercase bg-transparent border-none cursor-pointer">Политика за поверителност</button>
+          </div>
+          {/* GDPR compliance sentence removed as requested */}
+        </div>
+
+        <div className="flex gap-4 text-slate-400">
+          <span className="text-xs font-bold uppercase">Бургаски регион</span>
+          <span className="text-xs font-bold uppercase border-l border-slate-300 pl-4">Работим дистанционно</span>
+        </div>
+      </div>
+    </footer>
+  );
+
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
-      
       <main>
         {activeTab === 'home' && <HomeSection setActiveTab={setActiveTab} />}
         {activeTab === 'calculator' && <CalculatorSection setActiveTab={setActiveTab} setProjectChoice={setProjectChoice} setContactMessage={setContactMessage} />}
@@ -900,8 +1012,8 @@ export default function App() {
         {activeTab === 'faq' && <FAQSection />}
         {activeTab === 'contact' && <ContactSection projectChoice={projectChoice} setProjectChoice={setProjectChoice} contactMessage={contactMessage} setContactMessage={setContactMessage} />}
       </main>
-
-      <Footer />
+      <FooterWithModal />
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)} title={modalTitle} content={modalContent} />
     </div>
   );
 }
